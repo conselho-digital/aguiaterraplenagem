@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://conselho-digital.github.io/aguiaterraplenagem/sitemap.xml
