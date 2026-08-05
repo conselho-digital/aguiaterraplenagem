@@ -3,15 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Águia Terraplenagem | Terraplenagem e Locação de Máquinas em Campinas</title>
+  <title>Águia Terraplenagem | Terraplenagem em Campinas e Região</title>
   <meta name="description" content="Águia Terraplenagem: limpeza de terrenos, terra para aterro, demolições, escavações de piscina, baldrames e locação de máquinas. Atendemos Campinas e região.">
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+  <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
 
   <!-- HEADER -->
   <header class="header" id="header">
@@ -21,9 +23,9 @@
         <span class="brand__subtitle">Terraplenagem</span>
       </a>
 
-      <nav class="nav" id="nav">
+      <nav class="nav" id="nav" aria-label="Navegação principal">
         <a href="#servicos">Serviços</a>
-        <a href="#sobre">Sobre</a>
+        <a href="#porque">Por que a Águia</a>
         <a href="#area">Área de Atendimento</a>
         <a href="#contato">Contato</a>
       </nav>
@@ -33,7 +35,7 @@
         (19) 99813-0999
       </a>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -41,176 +43,206 @@
 
   <div id="top"></div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero__inner">
-      <div class="hero__content">
-        <p class="hero__eyebrow">Limpeza de terrenos &middot; Terraplenagem &middot; Demolições</p>
-        <h1 class="hero__title">Terraplenagem com força, precisão e agilidade em Campinas e região</h1>
+  <main id="conteudo">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__terrain" aria-hidden="true">
+        <svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+          <polygon points="0,500 0,320 140,380 300,260 460,340 620,220 800,300 800,500" class="terrain__layer terrain__layer--1"/>
+          <polygon points="0,500 0,400 180,440 340,360 520,420 700,340 800,400 800,500" class="terrain__layer terrain__layer--2"/>
+          <polygon points="0,500 0,460 220,480 420,440 600,470 800,440 800,500" class="terrain__layer terrain__layer--3"/>
+        </svg>
+      </div>
+
+      <div class="container hero__inner">
+        <p class="hero__eyebrow">Limpeza de Terrenos &middot; Aterro &middot; Demolições &middot; Piscinas &middot; Baldrames &middot; Máquinas</p>
+        <h1 class="hero__title">
+          TERRAPLENAGEM<br>
+          <span class="hero__title-accent">DE PONTA A PONTA</span>
+        </h1>
         <p class="hero__text">
-          A Águia Terraplenagem realiza limpeza de terrenos, terra para aterro, demolições,
-          escavações de piscina, baldrames e locação de máquinas para obras de todos os portes.
+          A Águia Terraplenagem prepara o terreno da sua obra do início ao fim: limpeza,
+          aterro, demolição, escavação de piscina, baldrame e locação de máquinas —
+          tudo com um único fornecedor.
         </p>
+
         <div class="hero__actions">
-          <a href="https://wa.me/5519998130999" target="_blank" rel="noopener" class="btn btn--primary">
+          <a href="https://wa.me/5519998130999" target="_blank" rel="noopener" class="btn btn--primary btn--lg">
             <svg viewBox="0 0 32 32" class="icon-wa" aria-hidden="true"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.34.653 4.527 1.786 6.393L4 29l7.8-1.75A11.94 11.94 0 0 0 16 27c6.628 0 12-5.373 12-12S22.63 3 16.001 3zm0 21.6c-1.98 0-3.85-.55-5.44-1.5l-.39-.23-4.63 1.04 1.03-4.5-.25-.4A9.55 9.55 0 0 1 5.4 15c0-5.85 4.75-10.6 10.6-10.6S26.6 9.15 26.6 15 21.85 24.6 16 24.6zm5.79-7.94c-.32-.16-1.87-.92-2.16-1.03-.29-.11-.5-.16-.71.16-.21.32-.81 1.03-1 1.24-.18.21-.37.24-.68.08-.32-.16-1.34-.49-2.55-1.57-.94-.84-1.58-1.88-1.76-2.2-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.55.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.55-.08-.16-.71-1.71-.97-2.34-.26-.62-.52-.54-.71-.55h-.6c-.21 0-.55.08-.84.4-.29.32-1.1 1.08-1.1 2.63s1.13 3.05 1.28 3.26c.16.21 2.23 3.4 5.4 4.77.75.32 1.34.52 1.8.66.76.24 1.44.21 1.99.13.61-.09 1.87-.76 2.13-1.5.26-.74.26-1.37.18-1.5-.08-.13-.29-.21-.6-.37z"/></svg>
             Solicitar orçamento
           </a>
-          <a href="tel:+5519998130999" class="btn btn--outline">Ligar agora</a>
+          <a href="tel:+5519998130999" class="btn btn--outline btn--lg">
+            <svg viewBox="0 0 24 24" class="icon-phone" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24 11.36 11.36 0 0 0 3.56.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.4 21 3 13.6 3 4.5a1 1 0 0 1 1-1h3.49a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.56a1 1 0 0 1-.25 1.02l-2.19 2.21z"/></svg>
+            (19) 99813-0999
+          </a>
         </div>
-        <div class="hero__location">
+
+        <div class="hero__badge">
           <svg viewBox="0 0 24 24" class="icon-pin" aria-hidden="true"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 6.6 11.32 7.14 11.82.24.22.62.22.86 0C13.4 21.32 20 15.25 20 10c0-4.42-3.58-8-8-8zm0 10.5A2.5 2.5 0 1 1 12 7.5a2.5 2.5 0 0 1 0 5z"/></svg>
           Atendemos Campinas e região
         </div>
       </div>
+    </section>
 
-      <div class="hero__panel">
-        <h2 class="hero__panel-title">Nossos serviços</h2>
-        <ul class="hero__list">
-          <li>Limpeza de terrenos</li>
-          <li>Terra para aterro</li>
-          <li>Demolições</li>
-          <li>Escavações de piscina</li>
-          <li>Baldrames</li>
-          <li>Locação de máquinas</li>
-        </ul>
-        <a href="https://wa.me/5519998130999" target="_blank" rel="noopener" class="btn btn--primary hero__panel-cta">Fale conosco no WhatsApp</a>
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="services">
+      <div class="container">
+        <p class="section__eyebrow">O que fazemos</p>
+        <h2 class="section__title">Serviços de terraplenagem</h2>
+
+        <div class="services__grid">
+          <article class="service-card">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <rect x="6" y="40" width="30" height="8" rx="1"/>
+                <circle cx="14" cy="50" r="6"/>
+                <circle cx="30" cy="50" r="6"/>
+                <rect x="34" y="30" width="16" height="12" rx="1"/>
+                <rect x="38" y="22" width="8" height="10"/>
+              </svg>
+            </div>
+            <h3>Limpeza de Terrenos</h3>
+            <p>Remoção de vegetação, entulho e preparo completo do terreno para o início da obra.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <rect x="6" y="28" width="26" height="16" rx="2"/>
+                <rect x="32" y="34" width="16" height="10" rx="1"/>
+                <circle cx="16" cy="48" r="6"/>
+                <circle cx="42" cy="48" r="6"/>
+                <rect x="34" y="24" width="8" height="8"/>
+              </svg>
+            </div>
+            <h3>Terra para Aterro</h3>
+            <p>Fornecimento e transporte de terra para aterro e nivelamento de áreas.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <rect x="10" y="18" width="30" height="20" rx="1"/>
+                <rect x="16" y="24" width="6" height="6"/>
+                <rect x="26" y="24" width="6" height="6"/>
+                <path d="M42 30 L54 22 L54 40 L42 34 Z"/>
+              </svg>
+            </div>
+            <h3>Demolições</h3>
+            <p>Demolição segura e planejada de estruturas residenciais, comerciais e industriais.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <path d="M8 46 Q14 40 20 46 T32 46 T44 46 T56 46" fill="none" stroke-width="4"/>
+                <path d="M8 54 Q14 48 20 54 T32 54 T44 54 T56 54" fill="none" stroke-width="4"/>
+                <rect x="12" y="14" width="4" height="26"/>
+                <rect x="48" y="14" width="4" height="26"/>
+              </svg>
+            </div>
+            <h3>Escavações de Piscina</h3>
+            <p>Escavação precisa no formato e nas medidas ideais para a construção da piscina.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <rect x="10" y="10" width="44" height="10" rx="1"/>
+                <rect x="10" y="24" width="10" height="10" rx="1"/>
+                <rect x="24" y="24" width="10" height="10" rx="1"/>
+                <rect x="38" y="24" width="10" height="10" rx="1"/>
+                <rect x="10" y="38" width="44" height="8" rx="1"/>
+              </svg>
+            </div>
+            <h3>Baldrames</h3>
+            <p>Execução de baldrames com qualidade técnica para garantir a base da construção.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 64 64" aria-hidden="true">
+                <rect x="6" y="34" width="24" height="12" rx="2"/>
+                <circle cx="14" cy="48" r="6"/>
+                <circle cx="30" cy="48" r="6"/>
+                <path d="M30 34 L38 22 L48 22 L48 34 Z"/>
+                <path d="M42 34 L54 30 L54 42 L42 40 Z"/>
+              </svg>
+            </div>
+            <h3>Locação de Máquinas</h3>
+            <p>Máquinas pesadas disponíveis para locação, com operação especializada para sua obra.</p>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SERVIÇOS -->
-  <section id="servicos" class="services">
-    <div class="container">
-      <p class="section__eyebrow">O que fazemos</p>
-      <h2 class="section__title">Serviços de terraplenagem</h2>
+    <!-- POR QUE A ÁGUIA -->
+    <section id="porque" class="why">
+      <div class="container why__inner">
+        <div class="why__text">
+          <p class="section__eyebrow">Por que a Águia</p>
+          <h2 class="section__title">Um só fornecedor, do terreno pronto à obra em pé</h2>
+          <p class="why__lead">
+            Em vez de contratar uma empresa para cada etapa, a Águia Terraplenagem cobre
+            limpeza, aterro, demolição, escavação, baldrame e locação de máquinas
+            com a mesma equipe — menos coordenação, menos atraso.
+          </p>
 
-      <div class="services__grid">
-        <article class="service-card">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 64 64" aria-hidden="true">
-              <rect x="6" y="40" width="30" height="8" rx="1"/>
-              <circle cx="14" cy="50" r="6"/>
-              <circle cx="30" cy="50" r="6"/>
-              <rect x="34" y="30" width="16" height="12" rx="1"/>
-              <rect x="38" y="22" width="8" height="10"/>
-            </svg>
-          </div>
-          <h3>Limpeza de Terrenos</h3>
-          <p>Remoção de vegetação, entulho e preparo completo do terreno para o início da sua obra.</p>
-        </article>
+          <ul class="why__list">
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+              <div>
+                <strong>Atendimento direto</strong>
+                <span>Fale agora por telefone ou WhatsApp e receba seu orçamento.</span>
+              </div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+              <div>
+                <strong>Máquinas próprias</strong>
+                <span>Equipamentos disponíveis também para locação avulsa.</span>
+              </div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+              <div>
+                <strong>Seis serviços, uma equipe</strong>
+                <span>De terreno bruto a baldrame pronto, sem trocar de fornecedor.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
 
-        <article class="service-card">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 64 64" aria-hidden="true">
-              <rect x="6" y="28" width="26" height="16" rx="2"/>
-              <rect x="32" y="34" width="16" height="10" rx="1"/>
-              <circle cx="16" cy="48" r="6"/>
-              <circle cx="42" cy="48" r="6"/>
-              <rect x="34" y="24" width="8" height="8"/>
-            </svg>
-          </div>
-          <h3>Terra para Aterro</h3>
-          <p>Fornecimento e transporte de terra de qualidade para aterro e nivelamento de áreas.</p>
-        </article>
-
-        <article class="service-card">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 64 64" aria-hidden="true">
-              <rect x="10" y="18" width="30" height="20" rx="1"/>
-              <rect x="16" y="24" width="6" height="6"/>
-              <rect x="26" y="24" width="6" height="6"/>
-              <path d="M42 30 L54 22 L54 40 L42 34 Z"/>
-            </svg>
-          </div>
-          <h3>Demolições</h3>
-          <p>Demolição segura e planejada de estruturas residenciais, comerciais e industriais.</p>
-        </article>
-
-        <article class="service-card">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 64 64" aria-hidden="true">
-              <path d="M8 46 Q14 40 20 46 T32 46 T44 46 T56 46" fill="none" stroke-width="4"/>
-              <path d="M8 54 Q14 48 20 54 T32 54 T44 54 T56 54" fill="none" stroke-width="4"/>
-              <rect x="12" y="14" width="4" height="26"/>
-              <rect x="48" y="14" width="4" height="26"/>
-            </svg>
-          </div>
-          <h3>Escavações de Piscina</h3>
-          <p>Escavação precisa no formato e nas medidas ideais para a construção da sua piscina.</p>
-        </article>
-
-        <article class="service-card">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 64 64" aria-hidden="true">
-              <rect x="10" y="10" width="44" height="10" rx="1"/>
-              <rect x="10" y="24" width="10" height="10" rx="1"/>
-              <rect x="24" y="24" width="10" height="10" rx="1"/>
-              <rect x="38" y="24" width="10" height="10" rx="1"/>
-              <rect x="10" y="38" width="44" height="8" rx="1"/>
-            </svg>
-          </div>
-          <h3>Baldrames</h3>
-          <p>Execução de baldrames com qualidade técnica para garantir a base ideal da construção.</p>
-        </article>
-
-        <article class="service-card">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 64 64" aria-hidden="true">
-              <rect x="6" y="34" width="24" height="12" rx="2"/>
-              <circle cx="14" cy="48" r="6"/>
-              <circle cx="30" cy="48" r="6"/>
-              <path d="M30 34 L38 22 L48 22 L48 34 Z"/>
-              <path d="M42 34 L54 30 L54 42 L42 40 Z"/>
-            </svg>
-          </div>
-          <h3>Locação de Máquinas</h3>
-          <p>Máquinas pesadas disponíveis para locação, com operação especializada para sua obra.</p>
-        </article>
+        <div class="why__card">
+          <svg viewBox="0 0 24 24" class="why__card-icon" aria-hidden="true"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 6.6 11.32 7.14 11.82.24.22.62.22.86 0C13.4 21.32 20 15.25 20 10c0-4.42-3.58-8-8-8zm0 10.5A2.5 2.5 0 1 1 12 7.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          <h3>Atendemos Campinas e Região</h3>
+          <p>Disponibilidade para atender obras em toda a região de Campinas.</p>
+          <a href="https://wa.me/5519998130999" target="_blank" rel="noopener" class="why__card-link">
+            Falar no WhatsApp
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SOBRE -->
-  <section id="sobre" class="about">
-    <div class="container about__inner">
-      <div class="about__text">
-        <p class="section__eyebrow">Sobre a Águia</p>
-        <h2 class="section__title">Experiência e confiança em terraplenagem</h2>
-        <p>
-          A Águia Terraplenagem trabalha com limpeza de terrenos, terra para aterro, demolições,
-          escavações de piscina, baldrames e locação de máquinas, entregando serviços com
-          agilidade e qualidade para obras de todos os tamanhos.
-        </p>
-        <ul class="about__points">
-          <li>Equipamentos preparados para diferentes tipos de terreno</li>
-          <li>Atendimento rápido via telefone e WhatsApp</li>
-          <li>Cobertura em Campinas e região</li>
-        </ul>
+    <!-- CTA BANNER -->
+    <section id="area" class="cta-banner">
+      <div class="container cta-banner__inner">
+        <div class="cta-banner__text">
+          <h2>Pronto para começar sua obra?</h2>
+          <p>Fale agora com a Águia Terraplenagem e solicite seu orçamento sem compromisso.</p>
+        </div>
+        <div class="cta-banner__actions">
+          <a href="https://wa.me/5519998130999" target="_blank" rel="noopener" class="btn btn--dark btn--lg">
+            <svg viewBox="0 0 32 32" class="icon-wa" aria-hidden="true"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.34.653 4.527 1.786 6.393L4 29l7.8-1.75A11.94 11.94 0 0 0 16 27c6.628 0 12-5.373 12-12S22.63 3 16.001 3zm0 21.6c-1.98 0-3.85-.55-5.44-1.5l-.39-.23-4.63 1.04 1.03-4.5-.25-.4A9.55 9.55 0 0 1 5.4 15c0-5.85 4.75-10.6 10.6-10.6S26.6 9.15 26.6 15 21.85 24.6 16 24.6zm5.79-7.94c-.32-.16-1.87-.92-2.16-1.03-.29-.11-.5-.16-.71.16-.21.32-.81 1.03-1 1.24-.18.21-.37.24-.68.08-.32-.16-1.34-.49-2.55-1.57-.94-.84-1.58-1.88-1.76-2.2-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.55.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.55-.08-.16-.71-1.71-.97-2.34-.26-.62-.52-.54-.71-.55h-.6c-.21 0-.55.08-.84.4-.29.32-1.1 1.08-1.1 2.63s1.13 3.05 1.28 3.26c.16.21 2.23 3.4 5.4 4.77.75.32 1.34.52 1.8.66.76.24 1.44.21 1.99.13.61-.09 1.87-.76 2.13-1.5.26-.74.26-1.37.18-1.5-.08-.13-.29-.21-.6-.37z"/></svg>
+            (19) 99813-0999
+          </a>
+        </div>
       </div>
-      <div class="about__card">
-        <svg viewBox="0 0 24 24" class="about__card-icon" aria-hidden="true"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 6.6 11.32 7.14 11.82.24.22.62.22.86 0C13.4 21.32 20 15.25 20 10c0-4.42-3.58-8-8-8zm0 10.5A2.5 2.5 0 1 1 12 7.5a2.5 2.5 0 0 1 0 5z"/></svg>
-        <h3>Atendemos Campinas e Região</h3>
-        <p>Disponibilidade para atender obras em toda a região de Campinas com equipamentos próprios.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ÁREA DE ATENDIMENTO / CTA -->
-  <section id="area" class="cta-banner">
-    <div class="container cta-banner__inner">
-      <div>
-        <h2>Pronto para começar sua obra?</h2>
-        <p>Fale agora com a Águia Terraplenagem e solicite seu orçamento sem compromisso.</p>
-      </div>
-      <div class="cta-banner__actions">
-        <a href="https://wa.me/5519998130999" target="_blank" rel="noopener" class="btn btn--primary">
-          <svg viewBox="0 0 32 32" class="icon-wa" aria-hidden="true"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.34.653 4.527 1.786 6.393L4 29l7.8-1.75A11.94 11.94 0 0 0 16 27c6.628 0 12-5.373 12-12S22.63 3 16.001 3zm0 21.6c-1.98 0-3.85-.55-5.44-1.5l-.39-.23-4.63 1.04 1.03-4.5-.25-.4A9.55 9.55 0 0 1 5.4 15c0-5.85 4.75-10.6 10.6-10.6S26.6 9.15 26.6 15 21.85 24.6 16 24.6zm5.79-7.94c-.32-.16-1.87-.92-2.16-1.03-.29-.11-.5-.16-.71.16-.21.32-.81 1.03-1 1.24-.18.21-.37.24-.68.08-.32-.16-1.34-.49-2.55-1.57-.94-.84-1.58-1.88-1.76-2.2-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.55.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.55-.08-.16-.71-1.71-.97-2.34-.26-.62-.52-.54-.71-.55h-.6c-.21 0-.55.08-.84.4-.29.32-1.1 1.08-1.1 2.63s1.13 3.05 1.28 3.26c.16.21 2.23 3.4 5.4 4.77.75.32 1.34.52 1.8.66.76.24 1.44.21 1.99.13.61-.09 1.87-.76 2.13-1.5.26-.74.26-1.37.18-1.5-.08-.13-.29-.21-.6-.37z"/></svg>
-          (19) 99813-0999
-        </a>
-      </div>
-    </div>
-  </section>
+  </main>
 
   <!-- CONTATO -->
   <footer id="contato" class="footer">
