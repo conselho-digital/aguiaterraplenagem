@@ -833,6 +833,10 @@ ul {
   * {
     scroll-behavior: auto !important;
   }
+
+  .nav {
+    transition: none !important;
+  }
 }
 
 /* ---------- RESPONSIVE ---------- */
@@ -870,7 +874,15 @@ ul {
   }
 
   .hero__art img {
-    width: 219px;
+    width: 252px;
+  }
+
+  .hero__eyebrow {
+    text-align: justify;
+  }
+
+  .hero__title {
+    text-align: center;
   }
 }
 
@@ -890,16 +902,29 @@ ul {
     top: 100%;
     left: 0;
     right: 0;
+    display: flex;
     background: var(--color-hero-bg);
     flex-direction: column;
-    padding: 20px 24px;
+    padding: 0 24px;
     gap: 18px;
     border-bottom: 1px solid rgba(20, 20, 15, 0.1);
-    display: none;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: max-height 600ms ease, opacity 450ms ease, transform 450ms ease, padding 600ms ease, visibility 0s linear 600ms;
   }
 
   .nav.is-open {
-    display: flex;
+    max-height: 420px;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    padding: 20px 24px;
+    pointer-events: auto;
+    transition: max-height 600ms ease, opacity 450ms ease, transform 450ms ease, padding 600ms ease;
   }
 
   .nav-toggle {
