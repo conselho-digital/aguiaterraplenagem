@@ -181,9 +181,16 @@ ul {
 
 .brand {
   display: flex;
-  align-items: baseline;
-  gap: 8px;
+  align-items: center;
+  gap: 10px;
   line-height: 1;
+}
+
+.brand__icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .brand__title {
@@ -270,7 +277,26 @@ ul {
 .hero__inner {
   position: relative;
   z-index: 1;
-  max-width: 860px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.hero__content {
+  max-width: 720px;
+}
+
+.hero__art {
+  display: flex;
+  justify-content: center;
+}
+
+.hero__art img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.45));
 }
 
 .hero__eyebrow {
@@ -285,7 +311,7 @@ ul {
 .hero__title {
   font-family: var(--font-display);
   color: var(--color-on-dark);
-  font-size: clamp(2.3rem, 9vw, 4.8rem);
+  font-size: clamp(2.3rem, 6.5vw, 4.2rem);
   line-height: 1.02;
   letter-spacing: 0.5px;
   margin-bottom: 26px;
@@ -364,53 +390,97 @@ ul {
 }
 
 .service-card {
-  background: var(--color-surface-muted);
+  position: relative;
+  overflow: hidden;
+  background: var(--color-surface);
+  color: var(--color-foreground);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
-  padding: 34px 30px;
-  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease), border-color var(--dur) var(--ease);
+  padding: 36px 30px 32px;
+  isolation: isolate;
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease), border-color var(--dur) var(--ease), color var(--dur) var(--ease);
 }
 
-.service-card:hover {
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-bg);
+  transform: translateY(100%);
+  transition: transform 320ms var(--ease);
+  z-index: -1;
+}
+
+.service-card:hover,
+.service-card:focus-within {
+  color: var(--color-on-dark);
+  border-color: var(--color-bg);
   transform: translateY(-6px);
   box-shadow: var(--shadow-md);
-  border-color: var(--color-primary);
+}
+
+.service-card:hover::before,
+.service-card:focus-within::before {
+  transform: translateY(0);
+}
+
+.service-card__num {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  letter-spacing: 0.5px;
+  color: var(--color-border);
+  transition: color var(--dur) var(--ease);
+}
+
+.service-card:hover .service-card__num,
+.service-card:focus-within .service-card__num {
+  color: rgba(246, 245, 242, 0.18);
 }
 
 .service-card__icon {
-  width: 56px;
-  height: 56px;
+  width: 58px;
+  height: 58px;
   background: var(--color-bg);
-  border-radius: var(--radius-sm);
+  color: var(--color-primary);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+
+.service-card:hover .service-card__icon,
+.service-card:focus-within .service-card__icon {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
 }
 
 .service-card__icon svg {
   width: 30px;
   height: 30px;
-  fill: none;
-  stroke: var(--color-primary);
-}
-
-.service-card__icon svg rect,
-.service-card__icon svg circle,
-.service-card__icon svg path {
-  fill: var(--color-primary);
-  stroke: none;
 }
 
 .service-card h3 {
   font-size: 1.15rem;
   font-weight: 700;
   margin-bottom: 10px;
+  position: relative;
 }
 
 .service-card p {
   color: var(--color-muted);
   font-size: 0.96rem;
+  position: relative;
+  transition: color var(--dur) var(--ease);
+}
+
+.service-card:hover p,
+.service-card:focus-within p {
+  color: var(--color-on-dark-muted);
 }
 
 /* ---------- WHY / TRUST ---------- */
@@ -622,6 +692,21 @@ ul {
 }
 
 /* ---------- RESPONSIVE ---------- */
+@media (max-width: 1100px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__content {
+    max-width: none;
+  }
+
+  .hero__art img {
+    max-width: 240px;
+    margin: 8px auto 0;
+  }
+}
+
 @media (max-width: 960px) {
   .why__inner {
     grid-template-columns: 1fr;
