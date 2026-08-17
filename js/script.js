@@ -28,7 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
    abaixo (ex.: "images/servicos/limpeza-1.jpg") para ativar a galeria do
    card correspondente. Cards sem fotos continuam não-clicáveis. */
 const SERVICE_GALLERIES = {
-  'limpeza-aterro': [],
+  'limpeza-aterro': [
+    'images/Limpeza de Terrenos e Aterro/WhatsApp Image 2026-08-14 at 16.30.39 (1).webp',
+    'images/Limpeza de Terrenos e Aterro/WhatsApp Image 2026-08-14 at 16.30.39 (2).webp',
+    'images/Limpeza de Terrenos e Aterro/WhatsApp Image 2026-08-14 at 16.30.40.webp',
+    'images/Limpeza de Terrenos e Aterro/WhatsApp Image 2026-08-14 at 16.30.40 (1).webp',
+    'images/Limpeza de Terrenos e Aterro/WhatsApp Image 2026-08-14 at 16.30.40 (2).webp',
+    'images/Limpeza de Terrenos e Aterro/WhatsApp Image 2026-08-14 at 16.30.42.webp',
+  ],
   'demolicoes': [],
   'piscinas': [],
   'baldrames': [],
