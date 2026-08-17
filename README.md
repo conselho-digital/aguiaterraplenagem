@@ -3,7 +3,7 @@
 Site institucional (página única, estático) da Águia Terraplenagem, com informações
 sobre os serviços, área de atendimento e contato via WhatsApp/telefone.
 
-Site publicado: https://conselho-digital.github.io/aguiaterraplenagem/
+Site publicado: https://aguiaterraplenagem.com.br/
 
 ## Estrutura
 
