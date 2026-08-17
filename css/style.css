@@ -481,7 +481,7 @@ ul {
 .services__grid {
   margin-top: 48px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 
@@ -889,10 +889,6 @@ ul {
 @media (max-width: 960px) {
   .why__inner {
     grid-template-columns: 1fr;
-  }
-
-  .services__grid {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
