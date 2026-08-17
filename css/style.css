@@ -498,6 +498,11 @@ ul {
   border-radius: var(--radius);
   padding: 48px 44px 44px;
   isolation: isolate;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.8),
     0 1px 2px rgba(20, 20, 15, 0.05),
@@ -829,6 +834,165 @@ ul {
   fill: var(--color-on-dark);
 }
 
+/* ---------- SERVICE CARD GALLERY TRIGGER ---------- */
+.service-card--clickable {
+  cursor: pointer;
+}
+
+.service-card--clickable::after {
+  content: "Ver fotos";
+  position: relative;
+  margin-top: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-hero-accent-text-sm);
+}
+
+/* ---------- GALLERY MODAL ---------- */
+.gallery-modal,
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 250ms ease, visibility 0s linear 250ms;
+}
+
+.gallery-modal.is-open,
+.lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 250ms ease;
+}
+
+.gallery-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 11, 12, 0.72);
+  backdrop-filter: blur(4px);
+}
+
+.gallery-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 760px;
+  max-height: 85vh;
+  overflow-y: auto;
+  background: var(--color-hero-bg);
+  border-radius: var(--radius);
+  padding: 40px;
+  box-shadow: var(--shadow-md);
+  transform: scale(0.96);
+  transition: transform 250ms ease;
+}
+
+.gallery-modal.is-open .gallery-modal__panel {
+  transform: scale(1);
+}
+
+.gallery-modal__close,
+.lightbox__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-bg);
+  color: var(--color-on-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform var(--dur) var(--ease);
+}
+
+.gallery-modal__close:hover,
+.lightbox__close:hover {
+  transform: scale(1.08);
+}
+
+.gallery-modal__close svg,
+.lightbox__close svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.gallery-modal__title {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  letter-spacing: 0.3px;
+  margin-bottom: 24px;
+  padding-right: 40px;
+}
+
+.gallery-modal__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 14px;
+}
+
+.gallery-modal__grid button {
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 1 / 1;
+  background: none;
+}
+
+.gallery-modal__grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 300ms ease;
+}
+
+.gallery-modal__grid button:hover img,
+.gallery-modal__grid button:focus-visible img {
+  transform: scale(1.08);
+}
+
+/* ---------- LIGHTBOX ---------- */
+.lightbox {
+  z-index: 400;
+}
+
+.lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox__img {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox .lightbox__close {
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     scroll-behavior: auto !important;
@@ -937,6 +1101,8 @@ ul {
 
   .service-card {
     padding: 34px 28px 30px;
+    aspect-ratio: auto;
+    justify-content: flex-start;
   }
 
   .cta-banner__inner {
