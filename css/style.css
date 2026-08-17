@@ -525,6 +525,39 @@ ul {
   z-index: -1;
 }
 
+.service-card.service-card--has-cover {
+  aspect-ratio: auto;
+  justify-content: flex-start;
+  padding: 28px 28px 32px;
+}
+
+.service-card--has-cover .service-card__icon,
+.service-card--has-cover .service-card__num {
+  display: none;
+}
+
+.service-card__cover {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 22px;
+  position: relative;
+}
+
+.service-card__cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 400ms var(--ease);
+}
+
+.service-card--has-cover:hover .service-card__cover img,
+.service-card--has-cover:focus-within .service-card__cover img {
+  transform: scale(1.06);
+}
+
 .service-card:hover,
 .service-card:focus-within {
   color: var(--color-on-primary);

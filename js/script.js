@@ -24,21 +24,31 @@ document.addEventListener('DOMContentLoaded', () => {
   setupServiceGalleries();
 });
 
-/* Fotos de cada serviço — adicione os caminhos das imagens em cada lista
-   abaixo (ex.: "images/servicos/limpeza-1.jpg") para ativar a galeria do
-   card correspondente. Cards sem fotos continuam não-clicáveis. */
+/* Fotos de cada serviço — "cover" é a foto de capa mostrada no card;
+   "photos" é a lista completa que abre na galeria (adicione os caminhos
+   das imagens, ex.: "images/servicos/limpeza-1.jpg"). Cards sem fotos
+   continuam não-clicáveis e sem capa. */
 const SERVICE_GALLERIES = {
-  'limpeza-aterro': [
-    'images/Limpeza de Terrenos e Aterro/WhatsApp Image 2026-08-14 at 16.30.39 (1).webp',
-    'images/Limpeza de Terrenos e Aterro/WhatsApp Image 2026-08-14 at 16.30.39 (2).webp',
-    'images/Limpeza de Terrenos e Aterro/WhatsApp Image 2026-08-14 at 16.30.40.webp',
-    'images/Limpeza de Terrenos e Aterro/WhatsApp Image 2026-08-14 at 16.30.40 (1).webp',
-    'images/Limpeza de Terrenos e Aterro/WhatsApp Image 2026-08-14 at 16.30.40 (2).webp',
-    'images/Limpeza de Terrenos e Aterro/WhatsApp Image 2026-08-14 at 16.30.42.webp',
-  ],
-  'demolicoes': [],
-  'piscinas': [],
-  'baldrames': [],
+  'limpeza-aterro': {
+    cover: 'images/Limpeza de Terrenos e Aterro/WhatsApp Image 2026-08-14 at 16.30.40 (1).webp',
+    photos: [
+      'images/Limpeza de Terrenos e Aterro/WhatsApp Image 2026-08-14 at 16.30.39 (1).webp',
+      'images/Limpeza de Terrenos e Aterro/WhatsApp Image 2026-08-14 at 16.30.39 (2).webp',
+      'images/Limpeza de Terrenos e Aterro/WhatsApp Image 2026-08-14 at 16.30.40.webp',
+      'images/Limpeza de Terrenos e Aterro/WhatsApp Image 2026-08-14 at 16.30.40 (1).webp',
+      'images/Limpeza de Terrenos e Aterro/WhatsApp Image 2026-08-14 at 16.30.40 (2).webp',
+      'images/Limpeza de Terrenos e Aterro/WhatsApp Image 2026-08-14 at 16.30.42.webp',
+    ],
+  },
+  'demolicoes': {
+    cover: 'images/Demolições/WhatsApp Image 2026-08-14 at 16.30.39.webp',
+    photos: [
+      'images/Demolições/WhatsApp Image 2026-08-14 at 16.30.39.webp',
+      'images/Demolições/WhatsApp Image 2026-08-14 at 16.30.41 (1).webp',
+    ],
+  },
+  'piscinas': { cover: '', photos: [] },
+  'baldrames': { cover: '', photos: [] },
 };
 
 function setupServiceGalleries() {
@@ -61,7 +71,7 @@ function setupServiceGalleries() {
 
   function openGalleryFor(card) {
     const key = card.dataset.gallery;
-    const photos = SERVICE_GALLERIES[key] || [];
+    const photos = (SERVICE_GALLERIES[key] && SERVICE_GALLERIES[key].photos) || [];
     if (!photos.length) {
       return;
     }
@@ -141,8 +151,21 @@ function setupServiceGalleries() {
 
   document.querySelectorAll('.service-card[data-gallery]').forEach((card) => {
     const key = card.dataset.gallery;
-    const photos = SERVICE_GALLERIES[key] || [];
-    if (!photos.length) {
+    const entry = SERVICE_GALLERIES[key] || { cover: '', photos: [] };
+
+    if (entry.cover) {
+      const cover = document.createElement('div');
+      cover.className = 'service-card__cover';
+      const img = document.createElement('img');
+      img.src = entry.cover;
+      img.alt = card.dataset.galleryTitle || '';
+      img.loading = 'lazy';
+      cover.appendChild(img);
+      card.classList.add('service-card--has-cover');
+      card.insertBefore(cover, card.firstChild);
+    }
+
+    if (!entry.photos.length) {
       return;
     }
 
