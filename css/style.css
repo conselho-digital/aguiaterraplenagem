@@ -917,8 +917,8 @@ ul {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 1140px;
-  max-height: 90vh;
+  max-width: 760px;
+  max-height: 85vh;
   overflow-y: auto;
   background: var(--color-hero-bg);
   border-radius: var(--radius);
@@ -972,8 +972,19 @@ ul {
 
 .gallery-modal__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
   gap: 14px;
+}
+
+@media (min-width: 781px) {
+  .gallery-modal__panel {
+    max-width: 1140px;
+    max-height: 90vh;
+  }
+
+  .gallery-modal__grid {
+    grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+  }
 }
 
 .gallery-modal__grid button {
