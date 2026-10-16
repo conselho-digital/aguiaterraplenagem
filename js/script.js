@@ -65,6 +65,13 @@ const SERVICE_GALLERIES = {
       'images/Baldrames/baldrame-05.webp',
     ],
   },
+  'escavacao-base': {
+    cover: 'images/Escavação de Base/escavacao-base-01.webp',
+    photos: [
+      'images/Escavação de Base/escavacao-base-01.webp',
+      'images/Escavação de Base/escavacao-base-02.webp',
+    ],
+  },
 };
 
 function setupServiceGalleries() {

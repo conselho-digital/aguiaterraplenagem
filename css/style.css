@@ -485,6 +485,16 @@ ul {
   gap: 32px;
 }
 
+.service-card--wide {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 781px) {
+  .service-card--wide .service-card__cover {
+    aspect-ratio: 32 / 9;
+  }
+}
+
 .service-card {
   position: relative;
   overflow: hidden;
