@@ -47,7 +47,14 @@ const SERVICE_GALLERIES = {
       'images/Demolições/WhatsApp Image 2026-08-14 at 16.30.41 (1).webp',
     ],
   },
-  'piscinas': { cover: '', photos: [] },
+  'piscinas': {
+    cover: 'images/Escavações de Piscina/piscina-01.webp',
+    photos: [
+      'images/Escavações de Piscina/piscina-01.webp',
+      'images/Escavações de Piscina/piscina-02.webp',
+      'images/Escavações de Piscina/piscina-03.webp',
+    ],
+  },
   'baldrames': {
     cover: 'images/Baldrames/baldrame-01.webp',
     photos: [
