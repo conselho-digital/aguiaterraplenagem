@@ -48,7 +48,16 @@ const SERVICE_GALLERIES = {
     ],
   },
   'piscinas': { cover: '', photos: [] },
-  'baldrames': { cover: '', photos: [] },
+  'baldrames': {
+    cover: 'images/Baldrames/baldrame-01.webp',
+    photos: [
+      'images/Baldrames/baldrame-01.webp',
+      'images/Baldrames/baldrame-02.webp',
+      'images/Baldrames/baldrame-03.webp',
+      'images/Baldrames/baldrame-04.webp',
+      'images/Baldrames/baldrame-05.webp',
+    ],
+  },
 };
 
 function setupServiceGalleries() {
