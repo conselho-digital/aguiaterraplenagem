@@ -520,10 +520,10 @@ ul {
 .service-card--has-cover h3 {
   position: absolute;
   z-index: 2;
-  top: 28px;
-  left: 28px;
+  top: 16px;
+  left: 16px;
   right: auto;
-  max-width: calc(100% - 56px);
+  max-width: calc(100% - 32px);
   width: fit-content;
   margin: 0;
   padding: 8px 16px;
@@ -1079,9 +1079,9 @@ ul {
   }
 
   .service-card--has-cover h3 {
-    top: 10px;
-    left: 10px;
-    max-width: calc(100% - 20px);
+    top: 8px;
+    left: 8px;
+    max-width: calc(100% - 16px);
     margin: 0;
     padding: 4px 8px;
     font-size: 0.82rem;
