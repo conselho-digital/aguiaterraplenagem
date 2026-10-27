@@ -1150,13 +1150,33 @@ ul {
   }
 
   .services__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 
   .service-card {
-    padding: 34px 28px 30px;
+    padding: 16px 14px 18px;
     aspect-ratio: auto;
     justify-content: flex-start;
+  }
+
+  .service-card__cover {
+    margin-bottom: 12px;
+  }
+
+  .service-card h3 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+
+  .service-card p {
+    font-size: 0.8rem;
+    line-height: 1.45;
+  }
+
+  .service-card--clickable::after {
+    margin-top: 10px;
+    font-size: 0.78rem;
   }
 
   .cta-banner__inner {
