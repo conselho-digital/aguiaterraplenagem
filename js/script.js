@@ -70,6 +70,10 @@ const SERVICE_GALLERIES = {
     photos: [
       'images/Escavação de Base/escavacao-base-01.webp',
       'images/Escavação de Base/escavacao-base-02.webp',
+      'images/Escavação de Base/escavacao-base-03.webp',
+      'images/Escavação de Base/escavacao-base-04.webp',
+      'images/Escavação de Base/escavacao-base-05.webp',
+      'images/Escavação de Base/escavacao-base-06.webp',
     ],
   },
 };
