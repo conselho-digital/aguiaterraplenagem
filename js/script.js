@@ -248,6 +248,14 @@ function setupServiceGalleries() {
       cover.appendChild(img);
       card.classList.add('service-card--has-cover');
       card.insertBefore(cover, card.firstChild);
+
+      // Move the title into the cover so the overlay chip is always
+      // positioned against the photo itself, not the card's padding box
+      // (a long two-line title would otherwise start above the image).
+      const titleEl = card.querySelector('h3');
+      if (titleEl) {
+        cover.appendChild(titleEl);
+      }
     }
 
     if (!entry.photos.length) {
