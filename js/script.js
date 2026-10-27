@@ -76,6 +76,13 @@ const SERVICE_GALLERIES = {
       'images/Escavação de Base/escavacao-base-06.webp',
     ],
   },
+  'caminhao-munck': {
+    cover: 'images/Caminhão Munck/caminhao-munck-01.webp',
+    photos: [
+      'images/Caminhão Munck/caminhao-munck-01.webp',
+      'images/Caminhão Munck/caminhao-munck-02.webp',
+    ],
+  },
 };
 
 function setupServiceGalleries() {
