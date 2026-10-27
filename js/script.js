@@ -1,4 +1,8 @@
+document.documentElement.classList.add('js-ready');
+
 document.addEventListener('DOMContentLoaded', () => {
+  setupEntranceReveal();
+
   const navToggle = document.getElementById('navToggle');
   const nav = document.getElementById('nav');
 
@@ -23,6 +27,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setupServiceGalleries();
 });
+
+/* Reveals [data-reveal] elements as they scroll into view. Hero elements
+   (already in the first screen) reveal right away with their own stagger;
+   everything else reveals once via IntersectionObserver. A hard timeout
+   force-reveals anything left over, so a slow/odd browser never leaves
+   content stuck invisible. */
+function setupEntranceReveal() {
+  const items = Array.from(document.querySelectorAll('[data-reveal]'));
+  if (!items.length) {
+    return;
+  }
+
+  const reveal = (el) => {
+    el.classList.add('is-visible');
+  };
+
+  const heroItems = items.filter((el) => el.closest('.hero'));
+  const scrollItems = items.filter((el) => !el.closest('.hero'));
+
+  heroItems.forEach((el) => {
+    const delay = el.dataset.revealDelay || '0';
+    el.style.setProperty('--reveal-delay', `${delay}ms`);
+    requestAnimationFrame(() => reveal(el));
+  });
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          reveal(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    scrollItems.forEach((el, index) => {
+      el.style.setProperty('--reveal-delay', `${(index % 3) * 80}ms`);
+      observer.observe(el);
+    });
+  } else {
+    scrollItems.forEach(reveal);
+  }
+
+  setTimeout(() => {
+    items.forEach(reveal);
+  }, 2500);
+}
 
 /* Fotos de cada serviço — "cover" é a foto de capa mostrada no card;
    "photos" é a lista completa que abre na galeria (adicione os caminhos
