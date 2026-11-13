@@ -411,7 +411,7 @@ ul {
 }
 
 @media (min-width: 781px) {
-  .service-card--wide .service-card__cover {
+  .service-card--wide .service-card__cover img {
     aspect-ratio: 32 / 9;
   }
 }
@@ -454,19 +454,16 @@ ul {
 
 .service-card__cover {
   width: 100%;
-  aspect-ratio: 16 / 10;
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 22px;
   position: relative;
 }
 
-
 .service-card__cover img {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
   display: block;
+  border-radius: 12px;
+  margin-bottom: 22px;
   transition: transform 400ms var(--ease);
 }
 
@@ -1063,8 +1060,21 @@ ul {
   }
 
   .services__grid {
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    grid-template-columns: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
     gap: 16px;
+    scrollbar-width: none;
+  }
+
+  .services__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .services__grid .service-card {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
   }
 
   .service-card {
@@ -1074,19 +1084,48 @@ ul {
   }
 
   .service-card__cover {
-    aspect-ratio: 4 / 3;
+    display: flex;
+    flex-direction: column;
     margin-bottom: 12px;
   }
 
+  .service-card__cover img {
+    order: 2;
+    aspect-ratio: 4 / 3;
+    margin-bottom: 0;
+  }
+
   .service-card--has-cover h3 {
-    top: 8px;
-    left: 8px;
-    max-width: calc(100% - 16px);
+    order: 1;
+    position: static;
+    z-index: auto;
+    top: auto;
+    left: auto;
+    max-width: none;
+    width: auto;
+    margin: 0 0 8px;
+    padding: 0;
+    font-size: 1.05rem;
+    line-height: 1.3;
+    background: none;
+    backdrop-filter: none; /* taste-skill-ignore: cancels the desktop chip's blur, not a new glass effect */
+    -webkit-backdrop-filter: none; /* taste-skill-ignore: cancels the desktop chip's blur, not a new glass effect */
+    border-radius: 0;
+    box-shadow: none; /* taste-skill-ignore: cancels the desktop chip's shadow, not a new shadow */
+  }
+
+  .service-card--has-cover p {
+    order: 3;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 0;
     margin: 0;
-    padding: 4px 8px;
-    font-size: 0.82rem;
-    line-height: 1.2;
-    border-radius: 8px;
+    padding: 10px 12px;
+    background: color-mix(in srgb, var(--color-bg) 68%, transparent); /* taste-skill-ignore: caption band needs separation from the photo behind it */
+    border-radius: 0 0 12px 12px;
+    color: var(--color-on-dark);
   }
 
   .service-card p {

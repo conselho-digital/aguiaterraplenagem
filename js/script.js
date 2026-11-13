@@ -256,6 +256,13 @@ function setupServiceGalleries() {
       if (titleEl) {
         cover.appendChild(titleEl);
       }
+
+      // Move the description in too: on mobile it becomes a caption
+      // overlaid on the photo, positioned against the cover the same way.
+      const descEl = card.querySelector('p');
+      if (descEl) {
+        cover.appendChild(descEl);
+      }
     }
 
     if (!entry.photos.length) {
